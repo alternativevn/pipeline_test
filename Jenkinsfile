@@ -24,7 +24,7 @@ pipeline{
             }
             steps {
                 ansiblePlaybook(
-                    credentialsId: 'global',
+                    credentialsId: 'private_key',
                     disableHostKeyChecking: true,
                     installation : "Ansible",
                     playbook: 'playbook.yml',
