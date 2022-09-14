@@ -1,2 +1,2 @@
 [test]
-52.196.68.231  ansible_user=ubuntu ansible_ssh_extra_args='-o StrictHostKeyChecking=no'
+54.199.154.247  ansible_user=ubuntu ansible_ssh_extra_args='-o StrictHostKeyChecking=no'
