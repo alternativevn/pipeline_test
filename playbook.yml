@@ -5,7 +5,7 @@
     - include_vars: var.yml
     - name: Docker login
       shell: 'docker login -u "{{dockerUser}}" -p "{{dockerPasswd}}"'
-      - name: list container p8085
+    - name: list container p8085
       shell: docker ps -q --filter "publish=8085" #list ID of all container with publish 8085
       register: val #gan vao bien val
     - name: rm container p8085
