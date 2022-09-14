@@ -5,10 +5,10 @@
     - include_vars: var.yml
     - name: Docker login
       shell: 'docker login -u "{{dockerUser}}" -p "{{dockerPasswd}}"'
-    - name: list container p80
+    - name: list container p8085
       shell: docker ps -q --filter "publish=8085"
       register: val
-    - name: rm container p80
+    - name: rm container p8085
       shell: docker rm -f `docker ps -q --filter "publish=8085"`
       when: val.stdout != ""
     - name: Docker rmi
