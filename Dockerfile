@@ -5,8 +5,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 EXPOSE 80
 
-RUN apt-get update && apt install -y awscli tree
-RUN apt-get install nginx -y
+RUN apk add --no-cache aws-cli
+RUN apk add nginx
 
 COPY index.html /var/www/html/
 
