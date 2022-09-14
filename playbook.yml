@@ -5,14 +5,6 @@
     - include_vars: var.yml
     - name: Docker login
       shell: 'docker login -u "{{dockerUser}}" -p "{{dockerPasswd}}"'
-    - name: list container p8085
-      shell: docker ps -q --filter "publish=8085"
-      register: val
-    - name: rm container p8085
-      shell: docker rm -f `docker ps -q --filter "publish=8085"`
-      when: val.stdout != ""
-    - name: Docker rmi
-      shell: "docker rmi -f `docker images | grep 'lamnv15' | awk '{ print $3 }'`"
     - name: Docker pull
       shell: 'docker pull "{{dockerRegis}}":"{{dockerVer}}"'
     - name: Docker run
