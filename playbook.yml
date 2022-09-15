@@ -11,8 +11,6 @@
     - name: rm container port 8085
       shell: docker rm -f `docker ps -q --filter "publish=8085"`
       when: val.stdout != "" #neu val =! rong thi docker rm cac container co port 8085
-    - name: Docker rmi
-      shell: "docker rmi -f `docker images | grep 'lamnv15' | awk '{ print $3 }'`" 
     - name: Docker pull
       shell: 'docker pull "{{dockerRegis}}":"{{dockerVer}}"'
     - name: Docker run
